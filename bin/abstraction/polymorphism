@@ -1,0 +1,19 @@
+Polymorphism in Dart brings versatility by allowing
+the same code to work with different types of objects while dynamically determining
+behavior at runtime. Whether using method overriding, abstract classes,
+or interfaces, polymorphism enhances flexibility and scalability in OOP design.
+
+
+
+======
+Important Notes on Multiple Methods and Polymorphism
+
+    Hierarchy Matters:
+        Only methods declared in the parent class (or interface) participate in polymorphism.
+        Any additional methods in the subclass are outside polymorphic behavior unless
+        explicitly handled.
+
+    Access to Specific Methods:
+        If you need to use subclass-specific methods,
+        you’ll need to downcast the object or directly use a reference of the subclass.
+ =========
