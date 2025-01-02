@@ -7,12 +7,17 @@
 // Submission Guideline: must submit by github link.
 
 
- void triangle(int base, int height){
+ double triangle(int base, int height){
   double area = 0.5*base*height;
-  print(area);
+  return area;
  }
 
-main() {
-  triangle(4, 10);
+void main() {
+  try {
+    double area = triangle(4, 10);
+    print("There area will be $area");
+  }catch(e){
+    print(e.toString());
+  }
 
 }
