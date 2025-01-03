@@ -55,10 +55,10 @@ class Student extends Person {
 
   int? studentID;
   double? grade;
-  List<int>courseScore=[];
+  static List<int>courseScore=[];
   // int score = 0;
-  int totalScore = 0;
-  Student(this.studentID, this.courseScore, this.grade ) : super('Arman', 26, 'Chittagong, Bangladesh');
+
+  Student(this.studentID,  this.grade ) : super('Arman', 26, 'Chittagong, Bangladesh');
 
   // get push => null;
   @override
@@ -66,14 +66,18 @@ class Student extends Person {
     // courseScore.addAll([2,3,5,2]);
     print("Your student ID : $studentID, Your grade are $grade");
   }
-  void calculatorStudent(score, totalScore){
+  int totalScore = 0;
+
+  get avgScore => null;
+  void calculatorStudent(){
 
     for(var score in courseScore) {
       totalScore += score;
-      int avgScore = totalScore / courseScore.length;
-      print(avgScore);
+      double avgScore = totalScore / courseScore.length;
+      
 
     }
+    print("My average score is: $avgScore");
   }
   
 }
@@ -91,13 +95,13 @@ class Student extends Person {
 
 class Teacher extends Person{
   int? teacherID;
-  List<String>courseTaught = [];
+  static List<String>courseTaught = [];
 
-  Teacher(this.teacherID, this.courseTaught) : super('Hasan', 25, 'Dhaka, Bangladesh');
+  Teacher(this.teacherID) : super('Hasan', 35, 'Dhaka, Bangladesh');
 
   @override
   displayRole(){
-    print("Your teacherID is : $teacherID")
+    print("Your teacherID is : $teacherID");
   }
   void courseTaughtByTeacher(){
     print("the courses taught by the teacher $courseTaught");
@@ -106,19 +110,35 @@ class Teacher extends Person{
 
 //
 // E. Create a class StudentManagementSystem:
-//
+
+class StudentManagementSystem{
+
+}
 //
 // In the main method, create instances of Student and Teacher classes.
-//
+void main(){
+
+  Student std = Student(193002812,  2.98);
+  Student.courseScore.addAll([68,77,86]);
+  std.displayRole();//print("Your teacherID is : $StudentID");
+  std.calculatorStudent(); //avgScore
+  Person pr = Person("Arman", 25, "Haphazari Chittagong");
+  pr.displayRole();
+
+  Teacher tc = Teacher(212002812);
+  Teacher.courseTaught.addAll(["Math, English, Physics"]);
+  tc.displayRole();
+  tc.courseTaughtByTeacher();
+
+  
+}
 // Set the attributes using appropriate methods.
 //
 // Use the displayRole() method to display the role of each person.
 //
 // This extended scenario incorporates interfaces to provide role-based behavior for students and Teachers.
 
-class StudentManagementSystem{
-  
-}
+
 //
 // Sample I/O:
 //
