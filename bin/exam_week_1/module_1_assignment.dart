@@ -12,22 +12,6 @@ abstract class Role{
 
 }
 
-class Student implements Role {
-
-  @override
-  void displayRole() {
-    print("students role is applying");
-  }
-}
-
-class Teacher implements Role{
-  @override
-  void displayRole(){
-    print("teacher role is applying");
-  }
-}
-
-
 //
 // B. Create a class Person:
 //
@@ -43,10 +27,8 @@ class Person implements Role{
    String ?  name;
    int? age;
    String?   address;
-
-
+   
    Person(this.name, this.age, this.address);
-
 
    @override
   void displayRole() {
@@ -74,7 +56,26 @@ class Student extends Person {
   int? studentID;
   double? grade;
   List<int>courseScore=[];
-  Student(this.studentID, this.courseScore, this.grade );
+  // int score = 0;
+  int totalScore = 0;
+  Student(this.studentID, this.courseScore, this.grade ) : super('Arman', 26, 'Chittagong, Bangladesh');
+
+  // get push => null;
+  @override
+  displayRole() {
+    // courseScore.addAll([2,3,5,2]);
+    print("Your student ID : $studentID, Your grade are $grade");
+  }
+  void calculatorStudent(score, totalScore){
+
+    for(var score in courseScore) {
+      totalScore += score;
+      int avgScore = totalScore / courseScore.length;
+      print(avgScore);
+
+    }
+  }
+  
 }
 //
 // D. Create another class Teacher that extends Person:
@@ -87,7 +88,22 @@ class Student extends Person {
 // Override the displayRole() method to display "Role: Teacher".
 //
 // Implement a method to display the courses taught by the teacher.
-//
+
+class Teacher extends Person{
+  int? teacherID;
+  List<String>courseTaught = [];
+
+  Teacher(this.teacherID, this.courseTaught) : super('Hasan', 25, 'Dhaka, Bangladesh');
+
+  @override
+  displayRole(){
+    print("Your teacherID is : $teacherID")
+  }
+  void courseTaughtByTeacher(){
+    print("the courses taught by the teacher $courseTaught");
+  }
+}
+
 //
 // E. Create a class StudentManagementSystem:
 //
@@ -99,7 +115,10 @@ class Student extends Person {
 // Use the displayRole() method to display the role of each person.
 //
 // This extended scenario incorporates interfaces to provide role-based behavior for students and Teachers.
-//
+
+class StudentManagementSystem{
+  
+}
 //
 // Sample I/O:
 //

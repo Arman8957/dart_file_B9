@@ -1,0 +1,20 @@
+Key Properties and Methods of a Dart List
+Property / Method	Description
+length	Returns the number of elements in the list.
+isEmpty	Returns true if the list is empty.
+isNotEmpty	Returns true if the list is not empty.
+first	Returns the first element of the list.
+last	Returns the last element of the list.
+reversed	Returns an iterable with the elements in reverse order.
+add(element)	Adds a single element to the end of the list.
+addAll(elements)	Adds all elements of another iterable to the end of the list.
+insert(index, element)	Inserts a single element at the specified index.
+insertAll(index, iterable)	Inserts multiple elements at the specified index.
+remove(element)	Removes the first occurrence of the element in the list.
+removeAt(index)	Removes the element at the specified index.
+removeLast()	Removes the last element from the list.
+contains(element)	Returns true if the list contains the specified element.
+indexOf(element)	Returns the index of the first occurrence of the element.
+clear()	Removes all elements from the list.
+map(callback)	Applies a function to each element and returns an iterable.
+forEach(callback)	Executes a function on each element in the list.
