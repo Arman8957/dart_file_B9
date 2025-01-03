@@ -24,15 +24,16 @@ abstract class Role{
 // Implement the Role abstract methods.
 
 class Person implements Role{
+  String? role;
    String ?  name;
    int? age;
    String?   address;
    
-   Person(this.name, this.age, this.address);
+   Person(this.role, this.name, this.age, this.address);
 
    @override
   void displayRole() {
-    print("My name is $name and age is $age. My address is $address");
+    print("Role :$role,  My name is $name and age is $age. My address is $address");
   }
 
 
@@ -58,7 +59,7 @@ class Student extends Person {
   static List<int>courseScore=[];
   // int score = 0;
 
-  Student(this.studentID,  this.grade ) : super('Arman', 26, 'Chittagong, Bangladesh');
+  Student(this.studentID,  this.grade ) : super("Student", 'Arman', 26, 'Chittagong, Bangladesh');
 
   // get push => null;
   @override
@@ -97,7 +98,7 @@ class Teacher extends Person{
   int? teacherID;
   static List<String>courseTaught = [];
 
-  Teacher(this.teacherID) : super('Hasan', 35, 'Dhaka, Bangladesh');
+  Teacher(this.teacherID) : super("Teacher", 'Sabbir', 35, 'Dhaka, Bangladesh');
 
   @override
   displayRole(){
@@ -122,12 +123,14 @@ void main(){
   Student.courseScore.addAll([68,77,86]);
   std.displayRole();//print("Your teacherID is : $StudentID");
   std.calculatorStudent(); //avgScore
-  Person pr = Person("Arman", 25, "Haphazari Chittagong");
-  pr.displayRole();
+  Person studentPereson = Person("Student","Arman", 25, "Haphazari Chittagong");
+  studentPereson.displayRole();
 
   Teacher tc = Teacher(212002812);
   Teacher.courseTaught.addAll(["Math, English, Physics"]);
   tc.displayRole();
+  Person teacherPerson = Person("Teacher","Hasan", 35, "Dhaka, Middle Badda");
+  teacherPerson.displayRole();
   tc.courseTaughtByTeacher();
 
   
