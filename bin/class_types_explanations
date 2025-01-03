@@ -1,0 +1,71 @@
+
+need understand first if i want to write class level projects..............
+
+abstract, polymorphism, inheritance, object, static, data type, private
+
+=>extends
+
+    Purpose: Inheritance.
+    How it Works: When one class extends another, it inherits all the properties and methods (except private ones) of the parent class.
+    The subclass can also override methods of the parent class.
+    Usage: Use extends when you want to reuse or modify the behavior of an existing class.
+
+
+=>implements
+
+    Purpose: To implement an interface.
+    How it Works: When a class implements another class, it promises to provide concrete implementations of all the methods and
+    properties defined in that class or its interface. Unlike extends, it does not inherit the implementation;
+    it only enforces the class to define its own implementation of the methods.
+    Usage: Use implements when you want to define a contract (interface) that classes must follow.
+
+   ->When to Use
+
+       Use extends when creating a subclass that builds on or modifies the behavior of a base class.
+       Use implements when defining a specific interface or contract that multiple classes need to follow.
+
+
+===============================================
+Override and overloading are two different concepts in object-oriented programming, and they help in achieving polymorphism in distinct ways.
+Here's a detailed explanation:
+1. Method Overriding
+
+    Definition: Method overriding occurs when a subclass provides its own implementation of a method already defined in its parent class.
+    The overridden method in the subclass must have the same name, parameters, and return type as the method in the parent class.
+    Purpose: To change or enhance the behavior of the inherited method for the subclass.
+
+Characteristics:
+
+    The method signature (name, parameters, return type) must match the parent class.
+    It works with inheritance (i.e., using extends or implements).
+    Annotations: In Dart, the @override annotation can be used to indicate overriding for better readability and to catch errors at compile time.
+    Decided at runtime (dynamic polymorphism).
+
+
+Override and overloading are two different concepts in object-oriented programming, and they help in achieving polymorphism in distinct ways. Here's a detailed explanation:
+1. Method Overriding
+
+    Definition: Method overriding occurs when a subclass provides its own implementation of a method already defined in its parent class. The overridden method in the subclass must have the same name, parameters, and return type as the method in the parent class.
+    Purpose: To change or enhance the behavior of the inherited method for the subclass.
+
+Characteristics:
+
+    The method signature (name, parameters, return type) must match the parent class.
+    It works with inheritance (i.e., using extends or implements).
+    Annotations: In Dart, the @override annotation can be used to indicate overriding for better readability and to catch errors at compile time.
+    Decided at runtime (dynamic polymorphism).
+
+Example: Method Overriding
+
+
+
+2. Method Overloading
+
+    Definition: Method overloading occurs when two or more methods in the same class (or a derived class) have the same name but different parameters (number, type, or both).
+    Purpose: To perform different but related actions depending on the provided parameters.
+
+Characteristics:
+
+    Methods must have the same name but a different parameter list (different number of parameters or types).
+    It allows compile-time polymorphism (decided at compile time).
+    Dart does not support traditional method overloading like languages such as Java or C++. However, you can achieve similar behavior using optional positional or named parameters or by using parameter types in Dart.
